@@ -1267,7 +1267,7 @@ mod test {
     #[test]
     fn at_signs() {
         let td = tempfile::Builder::new()
-            .prefix("sccache")
+            .prefix("cachepot")
             .tempdir()
             .unwrap();
         File::create(td.path().join("foo"))

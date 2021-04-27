@@ -1,6 +1,6 @@
 # .gitlab-ci.yml
 #
-# sccache
+# cachepot
 
 stages:
   - check
@@ -28,7 +28,7 @@ workflow:
     - which clang && clang --version
     - rustc +stable --version
     - rustc +nightly --version
-    - sccache -s
+    - cachepot -s
   retry:
     max: 2
     when:
@@ -100,5 +100,5 @@ artifacts:
   script:
     - cargo +stable build --release --features="${FEATURES}"
     # collect artifacts
-    - mkdir -p ./artifacts/sccache/
-    - mv ./target/release/sccache ./artifacts/sccache/.
+    - mkdir -p ./artifacts/cachepot/
+    - mv ./target/release/cachepot ./artifacts/cachepot/.
